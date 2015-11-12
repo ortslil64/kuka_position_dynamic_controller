@@ -1,0 +1,41 @@
+digraph G {
+node [shape=box];
+"world" [label="world"];
+"box" [label="box"];
+"kuka_base_link" [label="kuka_base_link"];
+"kuka_1_link" [label="kuka_1_link"];
+"kuka_2_link" [label="kuka_2_link"];
+"kuka_3_link" [label="kuka_3_link"];
+"kuka_4_link" [label="kuka_4_link"];
+"kuka_5_link" [label="kuka_5_link"];
+"kuka_6_link" [label="kuka_6_link"];
+"kuka_7_link" [label="kuka_7_link"];
+"kuka_gripper_wrist" [label="kuka_gripper_wrist"];
+"kuka_left_finger_link" [label="kuka_left_finger_link"];
+"kuka_right_finger_link" [label="kuka_right_finger_link"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"world" -> "world_joint" [label="xyz: 0 0 -0.5 \nrpy: 0 -0 0"]
+"world_joint" -> "box"
+"box" -> "box_kuka_base_joint" [label="xyz: 0 0 0.5 \nrpy: 0 -0 0"]
+"box_kuka_base_joint" -> "kuka_base_link"
+"kuka_base_link" -> "kuka_0_joint" [label="xyz: 0 0 0.11 \nrpy: 0 -0 0"]
+"kuka_0_joint" -> "kuka_1_link"
+"kuka_1_link" -> "kuka_1_joint" [label="xyz: 0 0 0.2005 \nrpy: 0 -0 0"]
+"kuka_1_joint" -> "kuka_2_link"
+"kuka_2_link" -> "kuka_2_joint" [label="xyz: 0 0 0.2 \nrpy: 0 -0 0"]
+"kuka_2_joint" -> "kuka_3_link"
+"kuka_3_link" -> "kuka_3_joint" [label="xyz: 0 0 0.2 \nrpy: 0 -0 0"]
+"kuka_3_joint" -> "kuka_4_link"
+"kuka_4_link" -> "kuka_4_joint" [label="xyz: 0 0 0.2 \nrpy: 0 -0 0"]
+"kuka_4_joint" -> "kuka_5_link"
+"kuka_5_link" -> "kuka_5_joint" [label="xyz: 0 0 0.19 \nrpy: 0 -0 0"]
+"kuka_5_joint" -> "kuka_6_link"
+"kuka_6_link" -> "kuka_6_joint" [label="xyz: 0 0 0.078 \nrpy: 0 -0 0"]
+"kuka_6_joint" -> "kuka_7_link"
+"kuka_7_link" -> "kuka_gripper_wrist_fix" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"kuka_gripper_wrist_fix" -> "kuka_gripper_wrist"
+"kuka_gripper_wrist" -> "kuka_left_finger_joint" [label="xyz: 0 0.021 0.042 \nrpy: 0 -0 0"]
+"kuka_left_finger_joint" -> "kuka_left_finger_link"
+"kuka_gripper_wrist" -> "kuka_right_finger_joint" [label="xyz: 0 -0.021 0.042 \nrpy: 0 -0 0"]
+"kuka_right_finger_joint" -> "kuka_right_finger_link"
+}

@@ -1,0 +1,37 @@
+kuka:
+  # CONTROLLERS USED IN THE EXAMLE
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 100  
+
+  # THIS CONFIGURATION IS ACTUALLY SENDING TAU = K*Q
+  joint_trajectory_controller:
+    type: effort_controllers/JointTrajectoryController
+    joints: 
+      - kuka_0_joint
+      - kuka_1_joint
+      - kuka_2_joint
+      - kuka_3_joint
+      - kuka_4_joint
+      - kuka_5_joint
+      - kuka_6_joint
+    gains:
+      kuka_0_joint: {p: 100,  i: 1, d: 1, i_clamp: 1}
+      kuka_1_joint: {p: 100,  i: 1, d: 1, i_clamp: 1}
+      kuka_2_joint: {p: 100,  i: 1, d: 1, i_clamp: 1}
+      kuka_3_joint: {p: 100,  i: 1, d: 1, i_clamp: 1}
+      kuka_4_joint: {p: 100,  i: 1, d: 1, i_clamp: 1}
+      kuka_5_joint: {p: 100,  i: 1, d: 1, i_clamp: 1}
+      kuka_6_joint: {p: 100,  i: 1, d: 1, i_clamp: 1}
+
+  kuka_left_finger_controller:
+    type: effort_controllers/JointPositionController
+    joint: kuka_left_finger_joint
+    pid: {p: 500.0, i: 0.0, d: 0.0}
+
+  kuka_right_finger_controller:
+    type: effort_controllers/JointPositionController
+    joint: kuka_right_finger_joint
+    pid: {p: 500.0, i: 0, d: 0.0}
+
+  

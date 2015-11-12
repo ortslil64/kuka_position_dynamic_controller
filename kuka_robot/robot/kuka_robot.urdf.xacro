@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="kuka_robot">
+
+	<!-- Include all models -->
+	<xacro:include filename="$(find kuka_robot)/robot/kuka_lwr.urdf.xacro"/>
+
+	<!-- and assemble your robot -->
+	
+	<link
+	    name="world">    
+	</link>
+	<joint
+	    name="world_joint"
+	    type="fixed">
+	    <origin xyz="0 0 -0.5" rpy="0 0 0"/>
+	    <parent link="world" />
+	    <child link="box" />
+	</joint> 
+
+	<link name="box">
+		<inertial>
+			<mass value="5.0"/>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<inertia ixx="0.01"
+             iyy="0.01"
+             izz="0.01"
+             ixy="0" iyz="0" ixz="0"/>
+		</inertial>
+		<visual>
+			<origin xyz="0.0005 0 0.00025" rpy="0 0 0"/>
+			<geometry>
+				<box size="0.00002 0.0010 0.0005"/>
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0.0005 0 0.00025" rpy="0 0 0"/>
+			<geometry>
+				<box size="0.0002 0.00010 0.0005"/>
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="box">
+		<static>true</static>>
+	</gazebo>
+
+	<!-- using the models -->
+	<xacro:kuka_lwr parent="box" name="kuka">
+		<origin xyz="0 0 0.5" rpy="0 0 0"/>
+	</xacro:kuka_lwr>
+
+</robot>

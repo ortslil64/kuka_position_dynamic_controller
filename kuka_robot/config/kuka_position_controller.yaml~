@@ -1,0 +1,57 @@
+kuka:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 1000  
+  
+  # Position Controllers ---------------------------------------
+  kuka_0_controller:
+    type: effort_controllers/JointPositionController
+    joint: kuka_0_joint
+    pid: {p: 500.0, i: 1.0, d: 0.0}
+
+  kuka_1_controller:
+    type: effort_controllers/JointPositionController
+    joint: kuka_1_joint
+    pid: {p: 2000.0, i: 1.00, d: 50}
+
+  kuka_2_controller:
+    type: effort_controllers/JointPositionController
+    joint: kuka_2_joint
+    pid: {p: 500.0, i: 1, d: 0.0}
+
+  kuka_3_controller:
+    type: effort_controllers/JointPositionController
+    joint: kuka_3_joint
+    pid: {p: 2000.0, i: 1, d: 30.0}
+
+  kuka_4_controller:
+    type: effort_controllers/JointPositionController
+    joint: kuka_4_joint
+    pid: {p: 500.0, i: 1, d: 0.0}
+
+  kuka_5_controller:
+    type: effort_controllers/JointPositionController
+    joint: kuka_5_joint
+    pid: {p: 2000.0, i: 1.0, d: 10.0}
+
+  kuka_6_controller:
+    type: effort_controllers/JointPositionController
+    joint: kuka_6_joint
+    pid: {p: 500.0, i: 1, d: 0.0}
+
+  kuka_left_finger_controller:
+    type: effort_controllers/JointEffortController
+    joint: kuka_left_finger_joint
+    pid: {p: 800.0, i: 1.0, d: 0.0}
+
+  kuka_right_finger_controller:
+    type: effort_controllers/JointEffortController
+    joint: kuka_right_finger_joint
+    pid: {p: 800.0, i: 1, d: 0.0}
+
+
+
+
+
+

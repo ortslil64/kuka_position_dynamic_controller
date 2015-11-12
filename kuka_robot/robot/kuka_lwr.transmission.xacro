@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+	<xacro:property name="Interface30" value="VelocityJointInterface"/>
+	<xacro:property name="Interface10" value="EffortJointInterface"/>
+
+	<xacro:macro name="kuka_lwr_transmission" params="name">
+
+		<transmission name="${name}_0_trans">
+			<type>transmission_interface/SimpleTransmission</type>
+			<joint name="${name}_0_joint">
+				<hardwareInterface>${Interface10}</hardwareInterface>
+			</joint>
+			<actuator name="${name}_0_motor">
+				<hardwareInterface>${Interface10}</hardwareInterface>
+				<mechanicalReduction>1</mechanicalReduction>
+			</actuator>
+		</transmission>
+
+		<transmission name="${name}_1_trans">
+			<type>transmission_interface/SimpleTransmission</type>
+			<joint name="${name}_1_joint">
+				<hardwareInterface>${Interface10}</hardwareInterface>
+			</joint>
+			<actuator name="${name}_1_motor">
+				<hardwareInterface>${Interface10}</hardwareInterface>
+				<mechanicalReduction>1</mechanicalReduction>
+			</actuator>
+		</transmission>
+
+		<transmission name="${name}_2_trans">
+			<type>transmission_interface/SimpleTransmission</type>
+			<joint name="${name}_2_joint">
+				<hardwareInterface>${Interface10}</hardwareInterface>
+			</joint>
+			<actuator name="${name}_2_motor">
+				<hardwareInterface>${Interface10}</hardwareInterface>
+				<mechanicalReduction>1</mechanicalReduction>
+			</actuator>
+		</transmission>
+
+		<transmission name="${name}_3_trans">
+			<type>transmission_interface/SimpleTransmission</type>
+			<joint name="${name}_3_joint">
+				<hardwareInterface>${Interface10}</hardwareInterface>
+			</joint>
+			<actuator name="${name}_3_motor">
+				<hardwareInterface>${Interface10}</hardwareInterface>
+				<mechanicalReduction>1</mechanicalReduction>
+			</actuator>
+		</transmission>
+
+		<transmission name="${name}_4_trans">
+			<type>transmission_interface/SimpleTransmission</type>
+			<joint name="${name}_4_joint">
+				<hardwareInterface>${Interface10}</hardwareInterface>
+			</joint>
+			<actuator name="${name}_4_motor">
+				<hardwareInterface>${Interface10}</hardwareInterface>
+				<mechanicalReduction>1</mechanicalReduction>
+			</actuator>
+		</transmission>
+
+		<transmission name="${name}_5_trans">
+			<type>transmission_interface/SimpleTransmission</type>
+			<joint name="${name}_5_joint">
+				<hardwareInterface>${Interface10}</hardwareInterface>
+			</joint>
+			<actuator name="${name}_5_motor">
+				<hardwareInterface>${Interface10}</hardwareInterface>
+				<mechanicalReduction>1</mechanicalReduction>
+			</actuator>
+		</transmission>
+
+		<transmission name="${name}_6_trans">
+			<type>transmission_interface/SimpleTransmission</type>
+			<joint name="${name}_6_joint">
+				<hardwareInterface>${Interface10}</hardwareInterface>
+			</joint>
+			<actuator name="${name}_6_motor">
+				<hardwareInterface>${Interface10}</hardwareInterface>
+				<mechanicalReduction>1</mechanicalReduction>
+			</actuator>
+		</transmission>
+
+		<transmission name="${name}_left_finger_tran">
+		    <type>transmission_interface/SimpleTransmission</type>
+		    <joint name="${name}_left_finger_joint">
+				<hardwareInterface>${Interface10}</hardwareInterface>
+		    </joint>
+		    <actuator name="${name}_left_finger_motor">
+		      <hardwareInterface>${Interface10}</hardwareInterface>
+		      <mechanicalReduction>1</mechanicalReduction>
+		    </actuator>
+		  </transmission>
+
+		  <transmission name="${name}_right_finger_tran">
+		    <type>transmission_interface/SimpleTransmission</type>
+		    <joint name="${name}_right_finger_joint">
+				<hardwareInterface>${Interface10}</hardwareInterface>
+		    </joint>
+		    <actuator name="${name}_right_finger_motor">
+		      <hardwareInterface>${Interface10}</hardwareInterface>
+		      <mechanicalReduction>1</mechanicalReduction>
+		    </actuator>
+		  </transmission>
+
+	</xacro:macro>
+
+</robot>
